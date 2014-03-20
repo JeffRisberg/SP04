@@ -1,0 +1,9 @@
+#header {
+    height: 5px;
+    background: red;
+}
+
+#footer {
+    background: #eee;
+    padding: 5px;
+}
