@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="span8 offset2">
+        <div class="col-md-8 col-md-offset-2">
             <h1>Users</h1>
             <form:form method="post" action="add" commandName="user" class="form-horizontal">
             <div class="control-group">
