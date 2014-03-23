@@ -57,7 +57,7 @@ public class UserService {
         return em.createQuery(criteria).getResultList();
     }
 
-    public User findEntityById(Long id) {
+    public User findEntityById(Integer id) {
         return em.find(User.class, id);
     }
 
@@ -84,7 +84,7 @@ public class UserService {
         this.delete(user.getId());
     }
 
-    public void delete(Long userId) {
+    public void delete(Integer userId) {
         User existingUser = this.findEntityById(userId);
         if (null != existingUser) {
             em.remove(existingUser);

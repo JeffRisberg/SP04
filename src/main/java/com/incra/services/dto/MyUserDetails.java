@@ -16,14 +16,14 @@ public class MyUserDetails extends
         org.springframework.security.core.userdetails.User {
     private static final long serialVersionUID = 0L;
 
-    private Long userId;
+    private Integer userId;
     private String fullName;
     private String email;
 
     public MyUserDetails(String username, String password, boolean enabled,
                          boolean accountNonExpired, boolean credentialsNonExpired,
                          boolean accountNonLocked,
-                         Collection<? extends GrantedAuthority> authorities, Long userId,
+                         Collection<? extends GrantedAuthority> authorities, Integer userId,
                          String fullName,
                          String email) {
         super(username, password, enabled, accountNonExpired,
@@ -33,7 +33,7 @@ public class MyUserDetails extends
         this.email = email;
     }
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 

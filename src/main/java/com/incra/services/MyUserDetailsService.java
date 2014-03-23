@@ -52,7 +52,7 @@ public class MyUserDetailsService implements UserDetailsService {
             List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
             authList.add(new GrantedAuthorityImpl("ROLE_USER"));
 
-            Long userId = domainUser.getId();
+            Integer userId = domainUser.getId();
             String fullName = domainUser.getFirstName() + " "
                     + domainUser.getLastName();
             String email = domainUser.getEmail();

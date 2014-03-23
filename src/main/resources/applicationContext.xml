@@ -43,6 +43,10 @@
         <property name="annotatedClasses">
             <list>
 
+                <value>com.incra.models.Box</value>
+                <value>com.incra.models.Rubric</value>
+                <value>com.incra.models.RubricBox</value>
+                <value>com.incra.models.Site</value>
                 <value>com.incra.models.User</value>
 
             </list>
