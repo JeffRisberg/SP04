@@ -37,13 +37,7 @@ public class AdminHomeController {
         List<AdminPanel> adminPanelList = new ArrayList<AdminPanel>();
         AdminPanel adminPanel;
 
-        adminPanel = new AdminPanel("Vendors", "/vendor");
-        adminPanelList.add(adminPanel);
-
-        adminPanel = new AdminPanel("Charities", "/charity");
-        adminPanelList.add(adminPanel);
-
-        adminPanel = new AdminPanel("Donations", "/donation");
+        adminPanel = new AdminPanel("Sites", "/site");
         adminPanelList.add(adminPanel);
 
         adminPanel = new AdminPanel("Users", "/user");

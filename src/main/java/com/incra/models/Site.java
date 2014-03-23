@@ -1,12 +1,15 @@
 package com.incra.models;
 
+import com.incra.database.AbstractDatabaseItem;
+import com.incra.database.AbstractTimeStampableDatabaseItem;
+
 import javax.persistence.*;
 
 /**
  * Stores site info
  */
 @Entity(name = "site")
-public class Site {
+public class Site extends AbstractTimeStampableDatabaseItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

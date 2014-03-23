@@ -1,6 +1,6 @@
 package com.incra.services;
 
-import com.incra.models.Site;
+import com.incra.models.Rubric;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,34 +14,34 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * The <i>SiteService</i> handles the JPA-based updating of Site entities.
+ * The <i>RubricService</i> handles the JPA-based updating of Rubric entities.
  *
  * @author Jeffrey Risberg
  * @since February 2014
  */
 @Transactional
 @Repository
-public class SiteService {
+public class RubricService {
 
     @PersistenceContext
     private EntityManager em;
 
-    public List<Site> findEntityList() {
+    public List<Rubric> findEntityList() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Site> criteria = cb.createQuery(Site.class);
-        criteria.from(Site.class);
+        CriteriaQuery<Rubric> criteria = cb.createQuery(Rubric.class);
+        criteria.from(Rubric.class);
 
         return em.createQuery(criteria).getResultList();
     }
 
-    public Site findEntityById(int id) {
-        return em.find(Site.class, id);
+    public Rubric findEntityById(int id) {
+        return em.find(Rubric.class, id);
     }
 
-    public Site findEntityByName(String name) {
+    public Rubric findEntityByName(String name) {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Site> criteria = builder.createQuery(Site.class);
-        Root<Site> root = criteria.from(Site.class);
+        CriteriaQuery<Rubric> criteria = builder.createQuery(Rubric.class);
+        Root<Rubric> root = criteria.from(Rubric.class);
 
         Path<String> rootName = root.get("name");
         criteria.where(builder.equal(rootName, name));
@@ -53,22 +53,22 @@ public class SiteService {
         }
     }
 
-    public void save(Site site) {
-        if (site.getId() == 0) {
-            em.persist(site);
+    public void save(Rubric rubric) {
+        if (rubric.getId() == 0) {
+            em.persist(rubric);
         } else {
-            em.merge(site);
+            em.merge(rubric);
         }
     }
 
-    public void delete(Site site) {
-        this.delete(site.getId());
+    public void delete(Rubric rubric) {
+        this.delete(rubric.getId());
     }
 
-    public void delete(int siteId) {
-        Site existingSite = this.findEntityById(siteId);
-        if (null != existingSite) {
-            em.remove(existingSite);
+    public void delete(int rubricId) {
+        Rubric existingRubric = this.findEntityById(rubricId);
+        if (null != existingRubric) {
+            em.remove(existingRubric);
         }
     }
 }

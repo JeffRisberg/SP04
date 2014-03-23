@@ -1,12 +1,14 @@
 package com.incra.models;
 
+import com.incra.database.AbstractDatabaseItem;
+
 import javax.persistence.*;
 
 /**
  * Stores firstName, lastName, email
  */
 @Entity(name = "user")
-public class User {
+public class User extends AbstractDatabaseItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
