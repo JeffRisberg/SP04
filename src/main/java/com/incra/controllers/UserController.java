@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/show/{userId}", method = RequestMethod.GET)
-    public String showUser(@PathVariable("userId") Long userId, Model model) {
+    public String showUser(@PathVariable("userId") int userId, Model model) {
 
         User user = userService.findEntityById(userId);
         System.out.println(user);
@@ -51,7 +51,7 @@ public class UserController {
     }
 
     @RequestMapping("/delete/{userId}")
-    public String deleteUser(@PathVariable("userId") Long userId) {
+    public String deleteUser(@PathVariable("userId") int userId) {
 
         userService.delete(userService.findEntityById(userId));
 
