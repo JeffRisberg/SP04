@@ -1,10 +1,13 @@
 package com.incra.services;
 
+import com.incra.pojo.MenuItem;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The <i>PageFrameworkService</i> maintains a list of MenuItems, and allows one
@@ -21,36 +24,36 @@ public class PageFrameworkService {
     private static final String FLASH_MESSAGE = "PF_FLASH_MESSAGE";
     private static final String IS_REDIRECT = "PF_IS_REDIRECT";
 
-    //private List<MenuItem> menuItems;
+    private List<MenuItem> menuItems;
 
     /**
      * Constructor
      */
     public PageFrameworkService() {
-        //this.menuItems = new ArrayList<MenuItem>();
+        this.menuItems = new ArrayList<MenuItem>();
 
-        //this.menuItems.add(new MenuItem("Home", "/home", true));
-        //this.menuItems.add(new MenuItem("Products", "/product/list", true));
-        //this.menuItems.add(new MenuItem("Customers", "/customer/list", true));
-        //this.menuItems.add(new MenuItem("Sales Orders", "/salesOrder/list", true));
-        //this.menuItems.add(new MenuItem("Projects", "/project/list", true));
+        this.menuItems.add(new MenuItem("Home", "/home", true));
+        this.menuItems.add(new MenuItem("Products", "/product/list", true));
+        this.menuItems.add(new MenuItem("Customers", "/customer/list", true));
+        this.menuItems.add(new MenuItem("Sales Orders", "/salesOrder/list", true));
+        this.menuItems.add(new MenuItem("Projects", "/project/list", true));
     }
 
     /**
      * Get the defined menu items. This doesn't vary by user session.
      */
-    //public List<MenuItem> getMenuItems() {
-    //    return menuItems;
-    //}
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
 
     /**
      * Get the current menu item, which is stored in the user's session.
      */
-    //public MenuItem getCurrentMenuItem(HttpServletRequest request) {
-    //    HttpSession session = request.getSession(true);
+    public MenuItem getCurrentMenuItem(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
 
-    //    return (MenuItem) session.getAttribute(CURRENT_MENU_ITEM);
-    //}
+        return (MenuItem) session.getAttribute(CURRENT_MENU_ITEM);
+    }
 
     /**
      * Change the current menu item based on the uri in the request.
@@ -61,12 +64,12 @@ public class PageFrameworkService {
         String uri = request.getRequestURI();
         String command = uri.substring(pathInfo.length());
 
-        //for (MenuItem menuItem : menuItems) {
-        //    if (command.startsWith(menuItem.getUrl())) {
-        //        session.setAttribute(CURRENT_MENU_ITEM, menuItem);
-        //        break;
-        //    }
-        //}
+        for (MenuItem menuItem : menuItems) {
+            if (command.startsWith(menuItem.getUrl())) {
+                session.setAttribute(CURRENT_MENU_ITEM, menuItem);
+                break;
+            }
+        }
     }
 
     /**
