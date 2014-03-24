@@ -26,11 +26,10 @@
 <div id="header">
     <tiles:insertAttribute name="header"/>
 </div>
-<div id="container">
-    <div id="content">
+<div id="content">
+    <div class="container">
         <tiles:insertAttribute name="body"/>
     </div>
-    <div style="clear:both"></div>
 </div>
 <div id="footer">
     <tiles:insertAttribute name="footer"/>

@@ -6,7 +6,7 @@
 <form:form method="post" action="${saveUrl}">
     <form:hidden path="id"/>
     <div>
-        Name<br/>
+        Name:<br/>
         <form:input path="name"/>
     </div>
 

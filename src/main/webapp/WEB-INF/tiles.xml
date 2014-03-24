@@ -41,7 +41,7 @@
     </definition>
 
     <definition name="home/*" extends="standardLayout">
-        <put-attribute name="title" value="Dashboard"/>
+        <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/WEB-INF/views/home/{1}.jsp"/>
     </definition>
 
@@ -58,6 +58,11 @@
     <definition name="site/*" extends="standardLayout">
         <put-attribute name="title" value="Site Management"/>
         <put-attribute name="body" value="/WEB-INF/views/site/{1}.jsp"/>
+    </definition>
+
+    <definition name="rubric/*" extends="standardLayout">
+        <put-attribute name="title" value="Rubric Management"/>
+        <put-attribute name="body" value="/WEB-INF/views/rubric/{1}.jsp"/>
     </definition>
 
 </tiles-definitions>

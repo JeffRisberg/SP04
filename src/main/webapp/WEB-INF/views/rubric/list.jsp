@@ -8,40 +8,44 @@
 
 <div class="row" style="padding-top: 8px">
     <div class="col-md-6" style="font-size: 16px; font-weight: bold">
-        Find, edit, and create your sites
+        Find, edit, and create your Rubrics
     </div>
     <div class="col-md-6">
-        <a href="<c:url value="/site/create" />" class="pull-right btn btn-default" style="padding: 0px 10px">
-            Create New Site &raquo
+        <a href="<c:url value="/rubric/create" />" class="pull-right btn btn-default" style="padding: 0px 10px">
+            Create New Rubric &raquo
         </a>
     </div>
 </div>
-<div id="siteResults">
+<div id="rubricResults">
     <div class="list">
         <table class="table">
             <thead>
             <tr>
-                <th>Name</th>
+                <th>Title</th>
+                <th>Seq Num</th>
+                <th>Body</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="site" items="${siteList}" varStatus="rowCounter">
+            <c:forEach var="rubric" items="${rubricList}" varStatus="rowCounter">
                 <tr class="${rowCounter.count % 2 == 0 ? 'even' : 'odd'}">
                     <td>
-                        <a href="<c:url value="/site/show/${site.id}" />">${site.name}</a>
+                        <a href="<c:url value="/rubric/show/${rubric.id}" />">${rubric.name}</a>
                     </td>
+                    <td>${rubric.seqNum}</td>
+                    <td>${rubric.body}</td>
                     <td>
                         <a class="btn btn-default" style="padding: 0px 10px"
-                           href="<c:url value="/site/edit/${site.id}" />">Edit</a>
+                           href="<c:url value="/rubric/edit/${rubric.id}" />">Edit</a>
                         <a class="btn btn-default" style="padding: 0px 10px"
-                           href="<c:url value="/site/delete/${site.id}" />">Delete</a>
+                           href="<c:url value="/rubric/delete/${rubric.id}" />">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
-            <c:if test="${empty siteList}">
+            <c:if test="${empty rubricList}">
                 <tr>
-                    <td colspan="999">No sites found</td>
+                    <td colspan="999">No rubrics found</td>
                 </tr>
             </c:if>
             </tbody>

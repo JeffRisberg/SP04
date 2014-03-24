@@ -7,11 +7,15 @@
 
 <table>
     <tr>
-        <td>Name:</td>
-        <td>${site.name}</td>
+        <td>Title:</td>
+        <td>${rubric.title}</td>
+    </tr>
+    <tr>
+        <td>Body:</td>
+        <td>${rubric.body}</td>
     </tr>
 </table>
 
 <div class="botButtons">
-    <a href="<c:url value="/site/${site.id}" />" class="btn btn-default">Edit</a>
+    <a href="<c:url value="/rubric/${rubric.id}" />" class="btn btn-default">Edit</a>
 </div>
