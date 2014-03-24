@@ -9,7 +9,7 @@ import org.springframework.security.access.annotation.Secured;
  * @author Jeffrey Risberg
  * @since 12/05/11
  */
-@Secured("ROLE_ADMIN")
+//@Secured("ROLE_ADMIN")
 public abstract class AbstractAdminController {
 
     // to be filled in

@@ -3,7 +3,6 @@ package com.incra.controllers;
 import com.incra.controllers.dto.AdminPanel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,21 +29,12 @@ public class AdminHomeController {
      * render it. The code should be checking for permissions on the specific
      * panels, but it doesn't yet.
      */
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @RequestMapping(value = "/adminHome/**")
     public ModelAndView index() {
 
         List<AdminPanel> adminPanelList = new ArrayList<AdminPanel>();
         AdminPanel adminPanel;
-
-        adminPanel = new AdminPanel("Vendors", "/vendor");
-        adminPanelList.add(adminPanel);
-
-        adminPanel = new AdminPanel("Charities", "/charity");
-        adminPanelList.add(adminPanel);
-
-        adminPanel = new AdminPanel("Donations", "/donation");
-        adminPanelList.add(adminPanel);
 
         adminPanel = new AdminPanel("Users", "/user");
         adminPanelList.add(adminPanel);

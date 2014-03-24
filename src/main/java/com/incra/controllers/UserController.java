@@ -19,7 +19,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping("/")
+    public String index() {
+        return "redirect:/user";
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
 
         List<User> users = userService.findEntityList();
