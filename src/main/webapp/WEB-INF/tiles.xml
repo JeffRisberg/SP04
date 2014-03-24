@@ -45,6 +45,11 @@
         <put-attribute name="body" value="/WEB-INF/views/home/{1}.jsp"/>
     </definition>
 
+    <definition name="adminHome/*" extends="standardLayout">
+        <put-attribute name="title" value="Admin Home"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminHome/{1}.jsp"/>
+    </definition>
+
     <definition name="user/*" extends="standardLayout">
         <put-attribute name="title" value="User Management"/>
         <put-attribute name="body" value="/WEB-INF/views/user/{1}.jsp"/>

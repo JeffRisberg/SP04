@@ -21,6 +21,16 @@
             <td><form:input path="title" size="40"/></td>
             <td><form:errors path="title" cssClass="error"/></td>
         </tr>
+        <tr>
+            <td>Seq Num:</td>
+            <td><form:input path="seqNum" size="40"/></td>
+            <td><form:errors path="seqNum" cssClass="error"/></td>
+        </tr>
+        <tr>
+            <td>Body:</td>
+            <td><form:textarea path="body" rows="5" cols="100"/></td>
+            <td><form:errors path="body" cssClass="error"/></td>
+        </tr>
     </table>
 
     <div class="botButtons">

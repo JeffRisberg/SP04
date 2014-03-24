@@ -5,10 +5,15 @@
 <c:url var="saveUrl" value="/site/save"/>
 <form:form method="post" action="${saveUrl}">
     <form:hidden path="id"/>
-    <div>
-        Name:<br/>
-        <form:input path="name"/>
-    </div>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><form:input path="name" size="40"/></td>
+            <td><form:errors path="name" cssClass="error"/></td>
+        </tr>
+    </table>
 
-    <input type="submit" value="Submit">
+    <div class="botButtons">
+        <input class="save" type="submit" value="Submit"/>
+    </div>
 </form:form>

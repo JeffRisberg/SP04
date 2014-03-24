@@ -31,7 +31,7 @@
             <c:forEach var="rubric" items="${rubricList}" varStatus="rowCounter">
                 <tr class="${rowCounter.count % 2 == 0 ? 'even' : 'odd'}">
                     <td>
-                        <a href="<c:url value="/rubric/show/${rubric.id}" />">${rubric.name}</a>
+                        <a href="<c:url value="/rubric/show/${rubric.id}" />">${rubric.title}</a>
                     </td>
                     <td>${rubric.seqNum}</td>
                     <td>${rubric.body}</td>

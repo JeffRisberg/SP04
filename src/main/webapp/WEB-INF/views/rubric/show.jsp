@@ -11,11 +11,15 @@
         <td>${rubric.title}</td>
     </tr>
     <tr>
+        <td>SeqNum:</td>
+        <td>${rubric.seqNum}</td>
+    </tr>
+    <tr>
         <td>Body:</td>
         <td>${rubric.body}</td>
     </tr>
 </table>
 
 <div class="botButtons">
-    <a href="<c:url value="/rubric/${rubric.id}" />" class="btn btn-default">Edit</a>
+    <a href="<c:url value="/rubric/edit/${rubric.id}" />" class="btn btn-default">Edit</a>
 </div>
