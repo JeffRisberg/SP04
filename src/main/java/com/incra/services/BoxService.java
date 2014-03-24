@@ -1,6 +1,7 @@
 package com.incra.services;
 
 import com.incra.models.Box;
+import com.incra.models.Site;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -71,4 +72,16 @@ public class BoxService {
             em.remove(existingBox);
         }
     }
+
+    public List<Box> findEntityListBySite(Site site) {
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<Box> criteria = builder.createQuery(Box.class);
+        Root<Box> root = criteria.from(Box.class);
+
+        Path<Site> rootSite = root.get("site");
+        criteria.where(builder.equal(rootSite, site));
+
+        return em.createQuery(criteria).getResultList();
+    }
+
 }

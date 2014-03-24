@@ -1,6 +1,8 @@
 package com.incra.services;
 
+import com.incra.models.Box;
 import com.incra.models.Rubric;
+import com.incra.models.RubricBox;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -70,5 +73,23 @@ public class RubricService {
         if (null != existingRubric) {
             em.remove(existingRubric);
         }
+    }
+
+    public List<Rubric> findEntityListByBox(Box box) {
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<RubricBox> criteria = builder.createQuery(RubricBox.class);
+        Root<RubricBox> root = criteria.from(RubricBox.class);
+
+        Path<Box> rootBox = root.get("box");
+        criteria.where(builder.equal(rootBox, box));
+
+        List<RubricBox> rbList = em.createQuery(criteria).getResultList();
+        List<Rubric> result = new ArrayList<Rubric>();
+
+        for (RubricBox rb : rbList) {
+            result.add(rb.getRubric());
+        }
+
+        return result;
     }
 }

@@ -24,6 +24,22 @@ public class RubricBox extends AbstractTimeStampableDatabaseItem {
     @JoinColumn(name = "box_id", nullable = false)
     protected Box box;
 
+    public Box getBox() {
+        return box;
+    }
+
+    public void setBox(Box box) {
+        this.box = box;
+    }
+
+    public Rubric getRubric() {
+        return rubric;
+    }
+
+    public void setRubric(Rubric rubric) {
+        this.rubric = rubric;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

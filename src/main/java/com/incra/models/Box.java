@@ -22,6 +22,7 @@ public class Box extends AbstractTimeStampableDatabaseItem {
     private String title;
 
     @Basic
+    @Column(name = "seq_num")
     private Integer seqNum;
 
     @ManyToOne
