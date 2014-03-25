@@ -3,6 +3,8 @@ package com.incra.models;
 import com.incra.database.AbstractTimeStampableDatabaseItem;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Region on a page
@@ -21,13 +23,31 @@ public class Box extends AbstractTimeStampableDatabaseItem {
     @Basic
     private String title;
 
-    @Basic
-    @Column(name = "seq_num")
-    private Integer seqNum;
-
     @ManyToOne
     @JoinColumn(name = "site_id", nullable = false)
     private Site site;
+
+    @Basic
+    @Column(name = "row_index")
+    private Integer rowIndex;
+
+    @Basic
+    @Column(name = "col_index")
+    private Integer colIndex;
+
+    @Basic
+    private Integer width;
+
+    @Basic
+    @Column(name = "image_file_name", nullable = true)
+    private String imageFileName;
+
+    @Transient
+    private List<Rubric> rubrics = new ArrayList<Rubric>();
+
+    // Constructor
+    public Box() {
+    }
 
     public Integer getId() {
         return id;
@@ -45,20 +65,48 @@ public class Box extends AbstractTimeStampableDatabaseItem {
         this.title = title;
     }
 
-    public Integer getSeqNum() {
-        return seqNum;
-    }
-
-    public void setSeqNum(Integer seqNum) {
-        this.seqNum = seqNum;
-    }
-
     public Site getSite() {
         return site;
     }
 
     public void setSite(Site site) {
         this.site = site;
+    }
+
+    public Integer getRowIndex() {
+        return rowIndex;
+    }
+
+    public void setRowIndex(Integer rowIndex) {
+        this.rowIndex = rowIndex;
+    }
+
+    public Integer getColIndex() {
+        return colIndex;
+    }
+
+    public void setColIndex(Integer colIndex) {
+        this.colIndex = colIndex;
+    }
+
+    public Integer getWidth() {
+        return width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+
+    public String getImageFileName() {
+        return imageFileName;
+    }
+
+    public void setImageFileName(String imageFileName) {
+        this.imageFileName = imageFileName;
+    }
+
+    public List<Rubric> getRubrics() {
+        return rubrics;
     }
 
     @Override

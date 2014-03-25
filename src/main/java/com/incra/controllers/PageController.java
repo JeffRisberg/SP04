@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class PageController {
     }
 
     /**
-     * custom page
+     * Custom page
      */
     @RequestMapping(value = "/page/{id}", method = RequestMethod.GET)
     public ModelAndView show(@PathVariable int id, Model model, HttpSession session) {
@@ -50,17 +51,26 @@ public class PageController {
         Site site = siteService.findEntityById(id);
         List<Box> boxes = boxService.findEntityListBySite(site);
 
-        Map<Integer, List<Rubric>> pageData = new HashMap<Integer, List<Rubric>>();
+        Map<Integer, List<Box>> pageData = new HashMap<Integer, List<Box>>();
 
         for (Box box : boxes) {
+            Integer rowIndex = box.getRowIndex();
+            System.out.println("box " + box.getTitle() + " " + rowIndex);
             List<Rubric> rubrics = rubricService.findEntityListByBox(box);
-            pageData.put(box.getSeqNum(), rubrics);
+            box.getRubrics().addAll(rubrics);
+
+            List<Box> boxList = pageData.get(rowIndex);
+            if (boxList == null) {
+                boxList = new ArrayList<Box>();
+                pageData.put(rowIndex, boxList);
+            }
+            boxList.add(box);
         }
+
         ModelAndView modelAndView = new ModelAndView("page/index");
         modelAndView.addObject("site", site);
-        modelAndView.addObject("box1", pageData.get(1));
-        modelAndView.addObject("box2", pageData.get(2));
-        modelAndView.addObject("box3", pageData.get(3));
+        modelAndView.addObject("boxes0", pageData.get(0));
+        modelAndView.addObject("boxes1", pageData.get(1));
 
         return modelAndView;
     }

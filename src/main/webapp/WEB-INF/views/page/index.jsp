@@ -11,22 +11,33 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <c:forEach items="${box1}" var="rubric">
-            <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
-            <div style="background: white">${rubric.body}</div>
-        </c:forEach>
-    </div>
-    <div class="col-md-4">
-        <c:forEach items="${box2}" var="rubric">
-            <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
-            <div style="background: white">${rubric.body}</div>
-        </c:forEach>
-    </div>
-    <div class="col-md-4">
-        <c:forEach items="${box3}" var="rubric">
-            <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
-            <div style="background: white">${rubric.body}</div>
-        </c:forEach>
-    </div>
+    <c:forEach items="${boxes0}" var="box">
+        <div class="col-md-${box.width}">
+            <c:forEach items="${box.rubrics}" var="rubric">
+                <c:if test="${not empty rubric.title}">
+                    <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
+                </c:if>
+                <c:if test="${not empty rubric.body}">
+                    <div style="background: white">${rubric.body}</div>
+                </c:if>
+            </c:forEach>
+        </div>
+    </c:forEach>
+    <div style="clear:both"></div>
+</div>
+
+<div class="row">
+    <c:forEach items="${boxes1}" var="box">
+        <div class="col-md-${box.width}">
+            <c:forEach items="${box.rubrics}" var="rubric">
+                <c:if test="${not empty rubric.title}">
+                    <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
+                </c:if>
+                <c:if test="${not empty rubric.body}">
+                    <div style="background: white">${rubric.body}</div>
+                </c:if>
+            </c:forEach>
+        </div>
+    </c:forEach>
+    <div style="clear:both"></div>
 </div>
