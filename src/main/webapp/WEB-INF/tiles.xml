@@ -65,6 +65,11 @@
         <put-attribute name="body" value="/WEB-INF/views/site/{1}.jsp"/>
     </definition>
 
+    <definition name="box/*" extends="standardLayout">
+        <put-attribute name="title" value="Box Management"/>
+        <put-attribute name="body" value="/WEB-INF/views/box/{1}.jsp"/>
+    </definition>
+
     <definition name="rubric/*" extends="standardLayout">
         <put-attribute name="title" value="Rubric Management"/>
         <put-attribute name="body" value="/WEB-INF/views/rubric/{1}.jsp"/>
