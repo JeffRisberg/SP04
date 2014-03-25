@@ -14,7 +14,7 @@ public class UserPropertyEditor extends PropertyEditorSupport {
 
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
-        //setValue(userService.findOne(Long.parseLong(text)));
+        setValue(userService.findEntityById(Integer.parseInt(text)));
     }
 
     @Override

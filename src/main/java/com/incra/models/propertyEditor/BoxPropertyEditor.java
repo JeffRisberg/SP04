@@ -14,7 +14,7 @@ public class BoxPropertyEditor extends PropertyEditorSupport {
 
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
-        //setValue(boxService.findOne(Long.parseLong(text)));
+        setValue(boxService.findEntityById(Integer.parseInt(text)));
     }
 
     @Override

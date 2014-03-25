@@ -55,7 +55,6 @@ public class PageController {
 
         for (Box box : boxes) {
             Integer rowIndex = box.getRowIndex();
-            System.out.println("box " + box.getTitle() + " " + rowIndex);
             List<Rubric> rubrics = rubricService.findEntityListByBox(box);
             box.getRubrics().addAll(rubrics);
 

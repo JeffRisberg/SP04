@@ -18,7 +18,7 @@ import java.util.List;
  * @since 11/15/11
  */
 @Controller
-public class AdminHomeController {
+public class AdminHomeController extends AbstractAdminController {
     protected static Logger logger = LoggerFactory.getLogger(AdminHomeController.class);
 
     public AdminHomeController() {
@@ -37,6 +37,9 @@ public class AdminHomeController {
         AdminPanel adminPanel;
 
         adminPanel = new AdminPanel("Sites", "/site");
+        adminPanelList.add(adminPanel);
+
+        adminPanel = new AdminPanel("Boxes", "/box");
         adminPanelList.add(adminPanel);
 
         adminPanel = new AdminPanel("Rubrics", "/rubric");

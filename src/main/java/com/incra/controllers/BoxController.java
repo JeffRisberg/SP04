@@ -1,8 +1,11 @@
 package com.incra.controllers;
 
 import com.incra.models.Box;
+import com.incra.models.Site;
+import com.incra.models.propertyEditor.SitePropertyEditor;
 import com.incra.services.BoxService;
 import com.incra.services.PageFrameworkService;
+import com.incra.services.SiteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,8 @@ public class BoxController extends AbstractAdminController {
     @Autowired
     private BoxService boxService;
     @Autowired
+    private SiteService siteService;
+    @Autowired
     private PageFrameworkService pageFrameworkService;
 
     public BoxController() {
@@ -38,6 +43,8 @@ public class BoxController extends AbstractAdminController {
 
     @InitBinder
     protected void initBinder(WebDataBinder dataBinder) throws Exception {
+        dataBinder.registerCustomEditor(Site.class,
+                new SitePropertyEditor(siteService));
     }
 
     @RequestMapping(value = "/box/**")

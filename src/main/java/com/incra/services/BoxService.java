@@ -83,5 +83,4 @@ public class BoxService {
 
         return em.createQuery(criteria).getResultList();
     }
-
 }
