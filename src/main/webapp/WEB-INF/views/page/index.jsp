@@ -6,9 +6,16 @@
     <div class="message">${flashMessage}</div>
 </c:if>
 
-<div style="font-size: 16px; font-weight: bold; padding: 15px 0px 15px 0px">
-    Custom giving site for ${site.name}
-</div>
+<c:if test="${not empty site.name}">
+    <div style="font-size: 16px; font-weight: bold; padding: 15px 0px 15px 0px">
+        Custom giving site for ${site.name}
+    </div>
+</c:if>
+<c:if test="${empty site}">
+    <div style="font-size: 16px; font-weight: bold; padding: 15px 0px 15px 0px">
+        Page not found
+    </div>
+</c:if>
 
 <div class="row">
     <c:forEach items="${boxes0}" var="box">

@@ -41,74 +41,18 @@
     </definition>
 
     <definition name="home/*" extends="standardLayout">
-        <put-attribute name="title" value="Dashboard"/>
+        <put-attribute name="title" value="Home"/>
         <put-attribute name="body" value="/WEB-INF/views/home/{1}.jsp"/>
     </definition>
 
-    <definition name="home/about" extends="modalLayout">
-        <put-attribute name="body" value="/WEB-INF/views/home/about.jsp"/>
+    <definition name="page/*" extends="standardLayout">
+        <put-attribute name="title" value="Custom Page"/>
+        <put-attribute name="body" value="/WEB-INF/views/page/{1}.jsp"/>
     </definition>
 
-    <definition name="dashboard/*" extends="standardLayout">
-        <put-attribute name="title" value="Dashboard"/>
-        <put-attribute name="body" value="/WEB-INF/views/dashboard/{1}.jsp"/>
-    </definition>
-
-    <definition name="orgUnit/*" extends="standardLayout">
-        <put-attribute name="title" value="Org Units"/>
-        <put-attribute name="body" value="/WEB-INF/views/orgUnit/{1}.jsp"/>
-    </definition>
-
-    <definition name="activityCategory/*" extends="standardLayout">
-        <put-attribute name="title" value="Activity Category Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/activityCategory/{1}.jsp"/>
-    </definition>
-
-    <definition name="activity/*" extends="standardLayout">
-        <put-attribute name="title" value="Activity Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/activity/{1}.jsp"/>
-    </definition>
-
-    <definition name="inventory/*" extends="standardLayout">
-        <put-attribute name="title" value="Inventory Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/inventory/{1}.jsp"/>
-    </definition>
-
-    <definition name="target/*" extends="standardLayout">
-        <put-attribute name="title" value="Target Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/target/{1}.jsp"/>
-    </definition>
-
-    <definition name="project/*" extends="standardLayout">
-        <put-attribute name="title" value="Project Manager"/>
-        <put-attribute name="sidebar" value="/WEB-INF/views/project/sidebar.jsp"/>
-        <put-attribute name="body" value="/WEB-INF/views/project/{1}.jsp"/>
-    </definition>
-
-    <definition name="projectDisplay/*" extends="standardLayout">
-        <put-attribute name="title" value="Project Manager"/>
-        <put-attribute name="sidebar" value="/WEB-INF/views/project/sidebar.jsp"/>
-        <put-attribute name="body" value="/WEB-INF/views/projectDisplay/{1}.jsp"/>
-    </definition>
-
-    <definition name="projectDashboard/*" extends="standardLayout">
-        <put-attribute name="title" value="Project Dashboard"/>
-        <put-attribute name="body" value="/WEB-INF/views/projectDashboard/{1}.jsp"/>
-    </definition>
-
-    <definition name="report/*" extends="standardLayout">
-        <put-attribute name="title" value="Reports Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/report/{1}.jsp"/>
-    </definition>
-
-    <definition name="administration/*" extends="standardLayout">
-        <put-attribute name="title" value="Administration"/>
-        <put-attribute name="body" value="/WEB-INF/views/administration/{1}.jsp"/>
-    </definition>
-
-    <definition name="entityDetailType/*" extends="standardLayout">
-        <put-attribute name="title" value="Detail Type Management"/>
-        <put-attribute name="body" value="/WEB-INF/views/entityDetailType/{1}.jsp"/>
+    <definition name="adminHome/*" extends="standardLayout">
+        <put-attribute name="title" value="Admin Home"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminHome/{1}.jsp"/>
     </definition>
 
     <definition name="user/*" extends="standardLayout">
@@ -116,66 +60,19 @@
         <put-attribute name="body" value="/WEB-INF/views/user/{1}.jsp"/>
     </definition>
 
-    <definition name="userRole/*" extends="standardLayout">
-        <put-attribute name="title" value="User Role Management"/>
-        <put-attribute name="body" value="/WEB-INF/views/userRole/{1}.jsp"/>
+    <definition name="site/*" extends="standardLayout">
+        <put-attribute name="title" value="Sites"/>
+        <put-attribute name="body" value="/WEB-INF/views/site/{1}.jsp"/>
     </definition>
 
-    <definition name="timeSegment/*" extends="standardLayout">
-        <put-attribute name="title" value="Time Segment Management"/>
-        <put-attribute name="body" value="/WEB-INF/views/timeSegment/{1}.jsp"/>
+    <definition name="box/*" extends="standardLayout">
+        <put-attribute name="title" value="Boxes"/>
+        <put-attribute name="body" value="/WEB-INF/views/box/{1}.jsp"/>
     </definition>
 
-    <definition name="timeSegment/picker" extends="modalLayout">
-        <put-attribute name="body" value="/WEB-INF/views/timeSegment/picker.jsp"/>
+    <definition name="rubric/*" extends="standardLayout">
+        <put-attribute name="title" value="Rubric"/>
+        <put-attribute name="body" value="/WEB-INF/views/rubric/{1}.jsp"/>
     </definition>
 
-    <definition name="timeSegment/pickerCore" extends="emptyLayout">
-        <put-attribute name="body" value="/WEB-INF/views/timeSegment/pickerCore.jsp"/>
-    </definition>
-
-    <definition name="flexFieldDefinition/*" extends="standardLayout">
-        <put-attribute name="title" value="Flex Field Definition Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/flexFieldDefinition/{1}.jsp"/>
-    </definition>
-
-    <definition name="resource/*" extends="standardLayout">
-        <put-attribute name="title" value="Resource Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/resource/{1}.jsp"/>
-    </definition>
-
-    <definition name="currency/*" extends="standardLayout">
-        <put-attribute name="title" value="Currency Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/currency/{1}.jsp"/>
-    </definition>
-
-    <definition name="activityCategory/*" extends="standardLayout">
-        <put-attribute name="title" value="Activity Category Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/activityCategory/{1}.jsp"/>
-    </definition>
-
-    <definition name="activityType/*" extends="standardLayout">
-        <put-attribute name="title" value="ActivityType Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/activityType/{1}.jsp"/>
-    </definition>
-
-    <definition name="projectType/*" extends="standardLayout">
-        <put-attribute name="title" value="Project Types"/>
-        <put-attribute name="body" value="/WEB-INF/views/projectType/{1}.jsp"/>
-    </definition>
-
-    <definition name="outputType/*" extends="standardLayout">
-        <put-attribute name="title" value="OutputType Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/outputType/{1}.jsp"/>
-    </definition>
-
-    <definition name="superAdmin/*" extends="standardLayout">
-        <put-attribute name="title" value="Super Admin"/>
-        <put-attribute name="body" value="/WEB-INF/views/superAdmin/{1}.jsp"/>
-    </definition>
-
-    <definition name="organization/*" extends="standardLayout">
-        <put-attribute name="title" value="Organization Manager"/>
-        <put-attribute name="body" value="/WEB-INF/views/organization/{1}.jsp"/>
-    </definition>
 </tiles-definitions>

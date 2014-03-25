@@ -33,6 +33,8 @@
                     </td>
                     <td>
                         <a class="btn btn-default" style="padding: 0px 10px"
+                           href="<c:url value="/page/${site.id}" />">View</a>
+                        <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/site/edit/${site.id}" />">Edit</a>
                         <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/site/delete/${site.id}" />">Delete</a>
