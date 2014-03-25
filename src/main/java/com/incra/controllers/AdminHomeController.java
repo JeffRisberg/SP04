@@ -12,13 +12,13 @@ import java.util.List;
 
 /**
  * The <i>AdminHomeController</i> controller generates the home screen for all
- * admin functions, such as Questions, Goals, Levels, and Users.
+ * admin functions.
  *
  * @author Jeffrey Risberg
  * @since 11/15/11
  */
 @Controller
-public class AdminHomeController {
+public class AdminHomeController extends AbstractAdminController {
     protected static Logger logger = LoggerFactory.getLogger(AdminHomeController.class);
 
     public AdminHomeController() {
