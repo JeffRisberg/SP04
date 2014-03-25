@@ -6,11 +6,11 @@
 <form:form method="post" action="${saveUrl}">
     <form:hidden path="id"/>
     <div>
-        First Name<br/>
+        First Name:<br/>
         <form:input path="firstName"/>
     </div>
     <div>
-        Last Name<br/>
+        Last Name:<br/>
         <form:input path="lastName"/>
     </div>
     <div>

@@ -4,38 +4,28 @@
 
 <c:url var="saveUrl" value="/user/save"/>
 <form:form method="post" action="${saveUrl}">
-  <form:hidden path="id" />
-  <form:hidden path="password" />
-  <form:hidden path="loginCount" /> 
-  <form:hidden path="lastLoggedIn" />  
-  <form:hidden path="city" />
-  <form:hidden path="state" /> 
-  <form:hidden path="country" />   
-    
-  <table>
-  <tr>
-    <td>Username:</td>
-    <td><form:input path="username"/></td>
-  </tr> 
-  <tr>
-    <td>First Name:</td>
-    <td><form:input path="firstName"/></td>
-  </tr> 
-  <tr>
-    <td>Last Name:</td>
-    <td><form:input path="lastName"/></td>
-  </tr>
-  <tr>
-   <td>Email:</td>
-   <td>
+    <form:hidden path="id"/>
+
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><form:input path="firstName"/></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><form:input path="lastName"/></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>
     <span class="input"><form:input path="email" cssErrorClass="error"
-        class="required oneInput" /> <form:errors path="email" cssClass="error" />
+                                    class="required oneInput"/> <form:errors path="email" cssClass="error"/>
     </span>
-   </td>
-  </tr>
-  </table>
-  
-  <div class="botButtons">
-  <input class="save" type="submit" value="Submit"/>
-  </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="botButtons">
+        <input class="save" type="submit" value="Submit"/>
+    </div>
 </form:form>
