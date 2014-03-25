@@ -5,7 +5,7 @@ import com.incra.database.AbstractTimeStampableDatabaseItem;
 import javax.persistence.*;
 
 /**
- * Stores firstName, lastName, email
+ * Stores firstName, lastName, email, password
  */
 @Entity(name = "user")
 public class User extends AbstractTimeStampableDatabaseItem {

@@ -33,36 +33,6 @@
     </span>
    </td>
   </tr>
-  <tr>
-   <td>Date Format:</td>
-   <td>
-    <form:select path="dateFormat">
-      <option value="">(Use Org Setting)</option>
-      <form:options items="${dateFormatList}" itemValue="id" itemLabel="formatString" />
-    </form:select>
-   </td>
-  </tr>
-  <tr>
-   <td>Negative Number Format:</td>
-   <td>
-    <form:select path="negativeNumberFormat">
-      <option value="">(Use Org Setting)</option>
-      <form:options items="${negativeNumberFormatList}" itemValue="id" itemLabel="name" />
-    </form:select>
-   </td>
-  </tr>   
-  <tr>
-   <td>Role(s):</td>
-   <td>
-    <span class="input">
-      <form:select path="roles" multiple="true"
-        cssErrorClass="error" class="required oneInput multiple">
-        <form:options items="${rolesList}" itemValue="id" itemLabel="name" />
-      </form:select> 
-      <form:errors path="roles" cssClass="error" />
-    </span>
-   </td>
-  </tr>
   </table>
   
   <div class="botButtons">
