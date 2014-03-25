@@ -4,15 +4,19 @@
 
 <c:url var="saveUrl" value="/user/save"/>
 <form:form method="post" action="${saveUrl}">
-  <form:hidden path="id" />
-  <div>
-    First Name<br />
-    <form:input path="firstName"/>
-  </div> 
-  <div>
-    Last Name<br />
-    <form:input path="lastName"/>
-  </div> 
-  
-  <input type="submit" value="Submit">
+    <form:hidden path="id"/>
+    <div>
+        First Name<br/>
+        <form:input path="firstName"/>
+    </div>
+    <div>
+        Last Name<br/>
+        <form:input path="lastName"/>
+    </div>
+    <div>
+        Email:<br/>
+        <form:input path="email"/>
+    </div>
+
+    <input type="submit" value="Submit">
 </form:form>
