@@ -6,13 +6,13 @@ values (1, null, 1, 'Donations',
    We make it easy to support your favorite causes and donate when, how, and as often as you want to more than 1.8 million charities working throughout the world. Several convenient search tools help you quickly find and learn more about any charity.
    </span></p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (2, null, 2, 'Rubric2', 'This is a test of rubric2');
+values (2, null, 2, 'One-time Donations', '<p>Make a one-time donation to one or more charities.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (3, null, 11, 'Rubric3', 'This is a test of rubric3');
+values (3, null, 11, null, 'For any cause you care about, it''s simple to find a charity: large or small, working in your local community or across the world - and donate to support their work.');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (4, null, 12, 'Rubric4', 'This is a test of rubric4');
+values (4, null, 12, 'Monthly Giving', '<p>Automatically donate to selected charities on a regular basis.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (5, null, 13, 'Rubric5', 'This is a test of rubric5');
+values (5, null, 13, 'Gift Donations', 'For every purpose and occasion, charity is the perfect gift.');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
 values (6, null, 20, 'Rubric6', 'This is a test of rubric6');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
@@ -33,9 +33,9 @@ INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_nam
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name) values (14, 2, 1,0, 12, 'Box10', null);
 
 INSERT INTO rubric_box (box_id, rubric_id) values (1, 1);
+INSERT INTO rubric_box (box_id, rubric_id) values (2, 2);
 INSERT INTO rubric_box (box_id, rubric_id) values (2, 3);
-INSERT INTO rubric_box (box_id, rubric_id) values (2, 4);
-INSERT INTO rubric_box (box_id, rubric_id) values (3, 2);
+INSERT INTO rubric_box (box_id, rubric_id) values (3, 4);
 INSERT INTO rubric_box (box_id, rubric_id) values (4, 5);
 
 INSERT INTO rubric_box (box_id, rubric_id) values (11, 4);
