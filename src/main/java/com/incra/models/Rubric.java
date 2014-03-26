@@ -20,6 +20,7 @@ public class Rubric extends AbstractTimeStampableDatabaseItem {
     private String title;
 
     @Basic
+    @Column(name = "body", length = 10000)
     private String body;
 
     @Basic

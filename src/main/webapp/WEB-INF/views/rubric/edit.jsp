@@ -2,6 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<script src="<c:url value="/ckeditor/ckeditor.js" />"></script>
+
 <style>
     .error {
         color: #ff0000;
@@ -37,3 +39,6 @@
         <input class="save" type="submit" value="Submit"/>
     </div>
 </form:form>
+<script>
+    CKEDITOR.replace('body');
+</script>

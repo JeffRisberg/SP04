@@ -2,6 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<script src="<c:url value="/ckeditor/ckeditor.js" />"></script>
+
 <c:url var="saveUrl" value="/rubric/save"/>
 <form:form method="post" action="${saveUrl}">
     <form:hidden path="id"/>
@@ -27,3 +29,7 @@
         <input class="save" type="submit" value="Submit"/>
     </div>
 </form:form>
+<script>
+    CKEDITOR.replace('body');
+</script>
+
