@@ -8,11 +8,11 @@ values (1, null, 1, 'Donations',
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
 values (2, null, 2, 'One-time Donations', '<p>Make a one-time donation to one or more charities.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (3, null, 11, null, 'For any cause you care about, it''s simple to find a charity: large or small, working in your local community or across the world - and donate to support their work.');
+values (3, null, 11, null, '<p>For any cause you care about, it''s simple to find a charity: large or small, working in your local community or across the world - and donate to support their work.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
 values (4, null, 12, 'Monthly Giving', '<p>Automatically donate to selected charities on a regular basis.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
-values (5, null, 13, 'Gift Donations', 'For every purpose and occasion, charity is the perfect gift.');
+values (5, null, 13, 'Gift Donations', '<p>For every purpose and occasion, charity is the perfect gift.</p>');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
 values (6, null, 20, 'Rubric6', 'This is a test of rubric6');
 INSERT INTO rubric (id, parent_id, seq_num, title, body)
