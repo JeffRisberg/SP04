@@ -83,8 +83,6 @@ public class RubricController extends AbstractAdminController {
     public ModelAndView edit(@PathVariable int id, String finalURL) {
         Rubric rubric = rubricService.findEntityById(id);
 
-        System.out.println(finalURL);
-
         ModelAndView modelAndView = new ModelAndView("rubric/edit");
         modelAndView.addObject("command", rubric);
         modelAndView.addObject("finalURL", finalURL);
@@ -99,8 +97,6 @@ public class RubricController extends AbstractAdminController {
         if (result.hasErrors()) {
             return "rubric/edit";
         }
-
-        System.out.println(finalURL);
 
         try {
             if (rubric.getDateCreated() == null) rubric.setDateCreated(new Date());

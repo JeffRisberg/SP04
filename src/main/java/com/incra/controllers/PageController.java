@@ -51,25 +51,37 @@ public class PageController {
         Site site = siteService.findEntityById(id);
         List<Box> boxes = boxService.findEntityListBySite(site);
 
-        Map<Integer, List<Box>> pageData = new HashMap<Integer, List<Box>>();
+        Map<Integer, List<Box>> rowMap = new HashMap<Integer, List<Box>>();
+        int maxRowIndex = 0;
 
         for (Box box : boxes) {
             Integer rowIndex = box.getRowIndex();
+            Integer colIndex = box.getColIndex();
+
             List<Rubric> rubrics = rubricService.findEntityListByBox(box);
             box.getRubrics().addAll(rubrics);
 
-            List<Box> boxList = pageData.get(rowIndex);
-            if (boxList == null) {
-                boxList = new ArrayList<Box>();
-                pageData.put(rowIndex, boxList);
+            List<Box> row = rowMap.get(rowIndex);
+            if (row == null) {
+                row = new ArrayList<Box>();
+                rowMap.put(rowIndex, row);
+                maxRowIndex = Math.max(maxRowIndex, rowIndex);
             }
-            boxList.add(box);
+
+            while (row.size() <= colIndex) row.add(null);
+            row.set(colIndex, box);
+        }
+
+        List<List<Box>> rowList = new ArrayList<List<Box>>();
+        for (int i = 0; i <= maxRowIndex; i++) {
+            if (rowMap.get(i) != null) {
+                rowList.add(rowMap.get(i));
+            }
         }
 
         ModelAndView modelAndView = new ModelAndView("page/index");
         modelAndView.addObject("site", site);
-        modelAndView.addObject("boxes0", pageData.get(0));
-        modelAndView.addObject("boxes1", pageData.get(1));
+        modelAndView.addObject("rowList", rowList);
 
         return modelAndView;
     }
