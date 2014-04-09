@@ -15,7 +15,7 @@
     <link href="<c:url value="/resources/styles/bootstrap.min.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/styles/bootstrap-theme.min.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/styles/datepicker.css" />" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="<c:url value="/resources/styles/main.css" />" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<c:url value="/resources/styles/styles.css" />" rel="stylesheet" type="text/css" media="screen"/>
 
     <script src="<c:url value="/resources/javascript/jquery-1.10.2.min.js" />"></script>
     <script src="<c:url value="/resources/javascript/bootstrap.min.js" />"></script>
