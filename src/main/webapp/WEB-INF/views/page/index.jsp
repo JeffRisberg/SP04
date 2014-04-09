@@ -21,6 +21,10 @@
     <c:forEach items="${boxes0}" var="box">
         <div class="col-md-${box.width}">
             <c:forEach items="${box.rubrics}" var="rubric">
+                <a href="<c:url value="/rubric/edit/${rubric.id}?finalURL=/page/${site.id}" />"
+                   style="position:absolute; right: 0px; top:0px">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
                 <c:if test="${not empty rubric.title}">
                     <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
                 </c:if>
@@ -37,6 +41,10 @@
     <c:forEach items="${boxes1}" var="box">
         <div class="col-md-${box.width}">
             <c:forEach items="${box.rubrics}" var="rubric">
+                <a href="<c:url value="/rubric/edit/${rubric.id}?finalURL=/page/${site.id}" />"
+                   style="position:absolute; right: 0px; top:0px">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
                 <c:if test="${not empty rubric.title}">
                     <div style="background: #eee; font-size: 16px; font-weight: bold">${rubric.title}</div>
                 </c:if>

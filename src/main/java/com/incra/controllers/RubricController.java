@@ -80,22 +80,27 @@ public class RubricController extends AbstractAdminController {
     }
 
     @RequestMapping(value = "/rubric/edit/{id}", method = RequestMethod.GET)
-    public ModelAndView edit(@PathVariable int id) {
+    public ModelAndView edit(@PathVariable int id, String finalURL) {
         Rubric rubric = rubricService.findEntityById(id);
+
+        System.out.println(finalURL);
 
         ModelAndView modelAndView = new ModelAndView("rubric/edit");
         modelAndView.addObject("command", rubric);
+        modelAndView.addObject("finalURL", finalURL);
 
         return modelAndView;
     }
 
     @RequestMapping(value = "/rubric/save", method = RequestMethod.POST)
-    public String save(final @ModelAttribute("command") @Valid Rubric rubric,
+    public String save(final @ModelAttribute("command") @Valid Rubric rubric, String finalURL,
                        BindingResult result, Model model, HttpSession session) {
 
         if (result.hasErrors()) {
             return "rubric/edit";
         }
+
+        System.out.println(finalURL);
 
         try {
             if (rubric.getDateCreated() == null) rubric.setDateCreated(new Date());
@@ -106,7 +111,11 @@ public class RubricController extends AbstractAdminController {
             pageFrameworkService.setIsRedirect(session, Boolean.TRUE);
             return "redirect:/rubric/list";
         }
-        return "redirect:/rubric/list";
+        if (finalURL != null && finalURL.length() > 0) {
+            return "redirect:" + finalURL;
+        } else {
+            return "redirect:/rubric/list";
+        }
     }
 
     @RequestMapping(value = "/rubric/delete/{id}", method = RequestMethod.GET)

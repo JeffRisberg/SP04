@@ -17,6 +17,7 @@
 <c:url var="saveUrl" value="/rubric/save"/>
 <form:form method="post" action="${saveUrl}">
     <form:hidden path="id"/>
+    <input type="hidden" name="finalURL" value="${finalURL}"/>
     <table>
         <tr>
             <td>Title:</td>
