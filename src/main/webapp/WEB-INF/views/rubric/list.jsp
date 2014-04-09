@@ -35,7 +35,7 @@
                     </td>
                     <td>${rubric.seqNum}</td>
                     <td>${rubric.body}</td>
-                    <td>
+                    <td style="white-space: nowrap">
                         <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/rubric/edit/${rubric.id}" />">Edit</a>
                         <a class="btn btn-default" style="padding: 0px 10px"
