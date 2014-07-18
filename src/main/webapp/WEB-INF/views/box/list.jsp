@@ -8,7 +8,7 @@
 
 <div class="row" style="padding-top: 8px">
     <div class="col-md-6" style="font-size: 16px; font-weight: bold">
-        Find, edit, and create your boxes
+        Find, edit, and create your Boxes
     </div>
     <div class="col-md-6">
         <a href="<c:url value="/box/create" />" class="pull-right btn btn-default" style="padding: 0px 10px">

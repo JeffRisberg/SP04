@@ -25,5 +25,5 @@
 </table>
 
 <div class="botButtons">
-    <a href="<c:url value="/box/${box.id}" />" class="btn btn-default">Edit</a>
+    <a href="<c:url value="/box/edit/${box.id}" />" class="btn btn-default">Edit</a>
 </div>
