@@ -5,10 +5,22 @@
     <div class="message">${flashMessage}</div>
 </c:if>
 
-<table>
+<table class="table">
     <tr>
         <td>Name:</td>
         <td>${site.name}</td>
+    </tr>
+    <tr>
+        <td>Custom CSS:</td>
+        <td>${site.customCSS}</td>
+    </tr>
+    <tr>
+        <td>Date Created:</td>
+        <td>${site.dateCreated}</td>
+    </tr>
+    <tr>
+        <td>Last Updated:</td>
+        <td>${site.lastUpdated}</td>
     </tr>
 </table>
 

@@ -22,6 +22,9 @@
             <thead>
             <tr>
                 <th>Name</th>
+                <th>Custom CSS</th>
+                <th>Date Created</th>
+                <th>Last Updated</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -31,6 +34,9 @@
                     <td>
                         <a href="<c:url value="/site/show/${site.id}" />">${site.name}</a>
                     </td>
+                    <td>${site.customCSS}</td>
+                    <td>${site.dateCreated}</td>
+                    <td>${site.lastUpdated}</td>
                     <td>
                         <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/page/${site.id}" />">View</a>

@@ -25,6 +25,8 @@
                 <th>Row Index</th>
                 <th>Col Index</th>
                 <th>Width</th>
+                <th>Date Created</th>
+                <th>Last Updated</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -37,6 +39,8 @@
                     <td>${box.rowIndex}</td>
                     <td>${box.colIndex}</td>
                     <td>${box.width}</td>
+                    <td>${box.dateCreated}</td>
+                    <td>${box.lastUpdated}</td>
                     <td>
                         <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/box/edit/${box.id}" />">Edit</a>

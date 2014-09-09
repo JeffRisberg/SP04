@@ -1,6 +1,6 @@
 package com.incra.models;
 
-import com.incra.database.AbstractTimeStampableDatabaseItem;
+import com.incra.database.AbstractDatedDatabaseItem;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,10 +13,7 @@ import java.util.List;
  * @since February 2014
  */
 @Entity(name = "box")
-public class Box extends AbstractTimeStampableDatabaseItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class Box extends AbstractDatedDatabaseItem {
 
     // type must go here somewhere
 
@@ -47,14 +44,6 @@ public class Box extends AbstractTimeStampableDatabaseItem {
 
     // Constructor
     public Box() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -130,7 +119,7 @@ public class Box extends AbstractTimeStampableDatabaseItem {
     public String toString() {
         StringBuffer sb = new StringBuffer();
 
-        sb.append("Rubric[title=");
+        sb.append("Box[title=");
         sb.append(title);
         sb.append("]");
 

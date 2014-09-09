@@ -1,6 +1,6 @@
 package com.incra.models;
 
-import com.incra.database.AbstractTimeStampableDatabaseItem;
+import com.incra.database.AbstractDatedDatabaseItem;
 
 import javax.persistence.*;
 
@@ -11,10 +11,7 @@ import javax.persistence.*;
  * @since February 2014
  */
 @Entity(name = "rubric")
-public class Rubric extends AbstractTimeStampableDatabaseItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class Rubric extends AbstractDatedDatabaseItem {
 
     @Basic
     private String title;
@@ -29,14 +26,6 @@ public class Rubric extends AbstractTimeStampableDatabaseItem {
 
     @ManyToOne
     private Rubric parent;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

@@ -9,6 +9,7 @@ import com.incra.services.SiteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -43,6 +45,8 @@ public class BoxController extends AbstractAdminController {
 
     @InitBinder
     protected void initBinder(WebDataBinder dataBinder) throws Exception {
+        dataBinder.registerCustomEditor
+                (Date.class, new CustomDateEditor(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"), false));
         dataBinder.registerCustomEditor(Site.class,
                 new SitePropertyEditor(siteService));
     }
@@ -107,6 +111,7 @@ public class BoxController extends AbstractAdminController {
         try {
             if (box.getDateCreated() == null) box.setDateCreated(new Date());
             box.setLastUpdated(new Date());
+
             boxService.save(box);
         } catch (RuntimeException re) {
             pageFrameworkService.setFlashMessage(session, re.getMessage());

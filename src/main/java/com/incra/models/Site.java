@@ -1,32 +1,24 @@
 package com.incra.models;
 
-import com.incra.database.AbstractDatabaseItem;
-import com.incra.database.AbstractTimeStampableDatabaseItem;
+import com.incra.database.AbstractDatedDatabaseItem;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Stores site info
  */
-@Entity(name = "site")
-public class Site extends AbstractTimeStampableDatabaseItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+@Entity
+@Table(name = "site")
+public class Site extends AbstractDatedDatabaseItem {
 
     @Basic
     private String name;
 
-    @Basic
+    @Column(name = "custom_css")
     private String customCSS;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -42,5 +34,22 @@ public class Site extends AbstractTimeStampableDatabaseItem {
 
     public void setCustomCSS(String customCSS) {
         this.customCSS = customCSS;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Site)) return false;
+
+        Site site = (Site) o;
+
+        if (!name.equals(site.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 }

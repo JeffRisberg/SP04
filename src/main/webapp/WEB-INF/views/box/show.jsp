@@ -5,7 +5,7 @@
     <div class="message">${flashMessage}</div>
 </c:if>
 
-<table>
+<table class="table">
     <tr>
         <td>Title:</td>
         <td>${box.title}</td>

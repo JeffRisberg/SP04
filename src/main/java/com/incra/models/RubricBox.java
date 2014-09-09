@@ -1,6 +1,6 @@
 package com.incra.models;
 
-import com.incra.database.AbstractTimeStampableDatabaseItem;
+import com.incra.database.AbstractDatabaseItem;
 
 import javax.persistence.*;
 
@@ -11,10 +11,7 @@ import javax.persistence.*;
  * @since February 2014
  */
 @Entity(name = "rubric_box")
-public class RubricBox extends AbstractTimeStampableDatabaseItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class RubricBox extends AbstractDatabaseItem {
 
     @ManyToOne
     @JoinColumn(name = "rubric_id", nullable = false)

@@ -41,4 +41,6 @@
     <div class="botButtons">
         <input class="save" type="submit" value="Submit"/>
     </div>
+
+    <form:hidden path="dateCreated"/>
 </form:form>

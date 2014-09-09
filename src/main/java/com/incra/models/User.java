@@ -1,6 +1,6 @@
 package com.incra.models;
 
-import com.incra.database.AbstractTimeStampableDatabaseItem;
+import com.incra.database.AbstractDatedDatabaseItem;
 
 import javax.persistence.*;
 
@@ -8,10 +8,7 @@ import javax.persistence.*;
  * Stores firstName, lastName, email, password
  */
 @Entity(name = "user")
-public class User extends AbstractTimeStampableDatabaseItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+public class User extends AbstractDatedDatabaseItem {
 
     @Basic
     private String firstName;
@@ -24,14 +21,6 @@ public class User extends AbstractTimeStampableDatabaseItem {
 
     @Basic
     private String password;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

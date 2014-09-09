@@ -11,6 +11,11 @@
             <td><form:input path="name" size="40"/></td>
             <td><form:errors path="name" cssClass="error"/></td>
         </tr>
+        <tr>
+            <td>Custom CSS:</td>
+            <td><form:input path="customCSS" size="40"/></td>
+            <td><form:errors path="customCSS" cssClass="error"/></td>
+        </tr>
     </table>
 
     <div class="botButtons">

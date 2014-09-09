@@ -1,11 +1,14 @@
 package com.incra.controllers;
 
 import com.incra.models.Rubric;
+import com.incra.models.Site;
+import com.incra.models.propertyEditor.SitePropertyEditor;
 import com.incra.services.PageFrameworkService;
 import com.incra.services.RubricService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -38,6 +42,8 @@ public class RubricController extends AbstractAdminController {
 
     @InitBinder
     protected void initBinder(WebDataBinder dataBinder) throws Exception {
+        dataBinder.registerCustomEditor
+                (Date.class, new CustomDateEditor(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"), false));
     }
 
     @RequestMapping(value = "/rubric/**")
@@ -101,6 +107,7 @@ public class RubricController extends AbstractAdminController {
         try {
             if (rubric.getDateCreated() == null) rubric.setDateCreated(new Date());
             rubric.setLastUpdated(new Date());
+
             rubricService.save(rubric);
         } catch (RuntimeException re) {
             pageFrameworkService.setFlashMessage(session, re.getMessage());

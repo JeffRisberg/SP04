@@ -24,6 +24,8 @@
                 <th>Title</th>
                 <th>Seq Num</th>
                 <th>Body</th>
+                <th>Date Created</th>
+                <th>Last Updated</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -35,6 +37,8 @@
                     </td>
                     <td>${rubric.seqNum}</td>
                     <td>${rubric.body}</td>
+                    <td>${rubric.dateCreated}</td>
+                    <td>${rubric.lastUpdated}</td>
                     <td style="white-space: nowrap">
                         <a class="btn btn-default" style="padding: 0px 10px"
                            href="<c:url value="/rubric/edit/${rubric.id}" />">Edit</a>
