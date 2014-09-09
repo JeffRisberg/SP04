@@ -18,8 +18,9 @@
         <tr>
             <td>Email:</td>
             <td>
-    <span class="input"><form:input path="email" cssErrorClass="error"
-                                    class="required oneInput"/> <form:errors path="email" cssClass="error"/>
+    <span class="input">
+        <form:input path="email" cssErrorClass="error" class="required oneInput"/>
+        <form:errors path="email" cssClass="error"/>
     </span>
             </td>
         </tr>
@@ -28,4 +29,6 @@
     <div class="botButtons">
         <input class="save" type="submit" value="Submit"/>
     </div>
+
+    <form:hidden path="dateCreated"/>
 </form:form>

@@ -1,34 +1,36 @@
 package com.incra.database;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * The <i>AbstractDomain</i> class is the superclass of entities. It provides
- * standard fields for tracking dates.
+ * The <i>AbstractDatabaseItem</i> class is the superclass of entities.
  *
  * @author Jeffrey Risberg
  * @since 09/10/11
  */
 @MappedSuperclass
 public abstract class AbstractDatabaseItem implements Serializable {
-    private Date dateCreated;
-    private Date lastUpdated;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    public Date getDateCreated() {
-        return dateCreated;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Date getLastUpdated() {
-        return lastUpdated;
+    /**
+     * Object methods
+     */
+    public String toString() {
+        return "[" + this.getClass().getSimpleName() + "]";
     }
 
-    public void setLastUpdated(Date lastUpdated) {
-        this.lastUpdated = lastUpdated;
-    }
 }

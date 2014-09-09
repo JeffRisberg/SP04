@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * The <i>AdminHomeController</i> controller generates the home screen for all
- * admin functions.
+ * admin functions, such as Questions, Goals, Levels, and Users.
  *
  * @author Jeffrey Risberg
  * @since 11/15/11
@@ -35,6 +35,15 @@ public class AdminHomeController extends AbstractAdminController {
 
         List<AdminPanel> adminPanelList = new ArrayList<AdminPanel>();
         AdminPanel adminPanel;
+
+        adminPanel = new AdminPanel("Sites", "/site");
+        adminPanelList.add(adminPanel);
+
+        adminPanel = new AdminPanel("Boxes", "/box");
+        adminPanelList.add(adminPanel);
+
+        adminPanel = new AdminPanel("Rubrics", "/rubric");
+        adminPanelList.add(adminPanel);
 
         adminPanel = new AdminPanel("Users", "/user");
         adminPanelList.add(adminPanel);

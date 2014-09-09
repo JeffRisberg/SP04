@@ -7,7 +7,7 @@
     <div class="message">${flashMessage}</div>
 </c:if>
 
-<table>
+<table class="table">
     <tr>
         <td>First Name:</td>
         <td>${user.firstName}</td>

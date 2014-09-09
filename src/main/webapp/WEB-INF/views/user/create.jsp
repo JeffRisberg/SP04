@@ -13,10 +13,6 @@
         Last Name:<br/>
         <form:input path="lastName"/>
     </div>
-    <div>
-        Email:<br/>
-        <form:input path="email"/>
-    </div>
 
     <input type="submit" value="Submit">
 </form:form>
