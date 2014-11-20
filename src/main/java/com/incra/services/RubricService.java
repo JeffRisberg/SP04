@@ -57,7 +57,7 @@ public class RubricService {
     }
 
     public void save(Rubric rubric) {
-        if (rubric.getId() == 0) {
+        if (rubric.getId() == null || rubric.getId() == 0) {
             em.persist(rubric);
         } else {
             em.merge(rubric);

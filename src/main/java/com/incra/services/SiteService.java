@@ -54,7 +54,7 @@ public class SiteService {
     }
 
     public void save(Site site) {
-        if (site.getId() == 0) {
+        if (site.getId() == null || site.getId() == 0) {
             em.persist(site);
         } else {
             em.merge(site);

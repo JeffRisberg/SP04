@@ -55,7 +55,7 @@ public class BoxService {
     }
 
     public void save(Box box) {
-        if (box.getId() == 0) {
+        if (box.getId() == null || box.getId() == 0) {
             em.persist(box);
         } else {
             em.merge(box);

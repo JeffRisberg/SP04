@@ -77,7 +77,11 @@ public class UserService {
     }
 
     public void save(User user) {
-        em.merge(user);
+        if (user.getId() == null || user.getId() == 0) {
+            em.persist(user);
+        } else {
+            em.merge(user);
+        }
     }
 
     public void delete(User user) {
