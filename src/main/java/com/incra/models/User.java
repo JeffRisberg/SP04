@@ -7,7 +7,8 @@ import javax.persistence.*;
 /**
  * Stores firstName, lastName, email, password
  */
-@Entity(name = "user")
+@Entity
+@Table(name = "user")
 public class User extends AbstractDatedDatabaseItem {
 
     @Basic

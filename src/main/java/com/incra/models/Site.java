@@ -2,10 +2,8 @@ package com.incra.models;
 
 import com.incra.database.AbstractDatedDatabaseItem;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Stores site info
@@ -19,6 +17,9 @@ public class Site extends AbstractDatedDatabaseItem {
 
     @Column(name = "custom_css")
     private String customCSS;
+
+    @OneToMany(mappedBy = "site")
+    private List<Box> boxes;
 
     public String getName() {
         return name;
@@ -34,6 +35,14 @@ public class Site extends AbstractDatedDatabaseItem {
 
     public void setCustomCSS(String customCSS) {
         this.customCSS = customCSS;
+    }
+
+    public List<Box> getBoxes() {
+        return boxes;
+    }
+
+    public void setBoxes(List<Box> boxes) {
+        this.boxes = boxes;
     }
 
     @Override

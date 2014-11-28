@@ -12,7 +12,8 @@ import java.util.List;
  * @author Jeff Risberg
  * @since February 2014
  */
-@Entity(name = "box")
+@Entity
+@Table(name = "box")
 public class Box extends AbstractDatedDatabaseItem {
 
     // type must go here somewhere

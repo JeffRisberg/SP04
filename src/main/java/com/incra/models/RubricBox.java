@@ -10,7 +10,8 @@ import javax.persistence.*;
  * @author Jeff Risberg
  * @since February 2014
  */
-@Entity(name = "rubric_box")
+@Entity
+@Table(name = "rubric_box")
 public class RubricBox extends AbstractDatabaseItem {
 
     @ManyToOne

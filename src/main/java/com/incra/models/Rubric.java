@@ -10,7 +10,8 @@ import javax.persistence.*;
  * @author Jeff Risberg
  * @since February 2014
  */
-@Entity(name = "rubric")
+@Entity
+@Table(name = "rubric")
 public class Rubric extends AbstractDatedDatabaseItem {
 
     @Basic
