@@ -21,6 +21,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th>Site</th>
                 <th>Title</th>
                 <th>Row Index</th>
                 <th>Col Index</th>
@@ -33,6 +34,7 @@
             <tbody>
             <c:forEach var="box" items="${boxList}" varStatus="rowCounter">
                 <tr class="${rowCounter.count % 2 == 0 ? 'even' : 'odd'}">
+                    <td>${box.site.name}</td>
                     <td>
                         <a href="<c:url value="/box/show/${box.id}" />">${box.title}</a>
                     </td>

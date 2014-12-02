@@ -7,6 +7,15 @@
     <form:hidden path="id"/>
     <table>
         <tr>
+            <td>Site:</td>
+            <td>
+                <form:select path="site">
+                    <form:options items="${siteList}" itemValue="id" itemLabel="name"/>
+                </form:select>
+            </td>
+            <td><form:errors path="title" cssClass="error"/></td>
+        </tr>
+        <tr>
             <td>Title:</td>
             <td><form:input path="title" size="40"/></td>
             <td><form:errors path="title" cssClass="error"/></td>

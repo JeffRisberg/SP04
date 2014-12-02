@@ -27,22 +27,22 @@ INSERT INTO rubric (id, parent_id, seq_num, title, body, date_created, last_upda
 values (9, null, 23, 'Rubric9', 'This is a test of rubric9', now(), now());
 
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (1, 1, 0, 0, 12, 'Box00', null, now(), now());
+values (1, 1, 0, 0, 12, 'ABox00', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (2, 1, 1, 0, 4, 'Box10', null, now(), now());
+values (2, 1, 1, 0, 4, 'ABox10', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (3, 1, 1, 1, 4, 'Box11', null, now(), now());
+values (3, 1, 1, 1, 4, 'ABox11', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (4, 1, 1, 2, 4, 'Box12', null, now(), now());
+values (4, 1, 1, 2, 4, 'ABox12', null, now(), now());
 
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (11, 2, 0, 0, 4, 'Box00', null, now(), now());
+values (11, 2, 0, 0, 4, 'CBox00', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (12, 2, 0, 1, 4, 'Box01', null, now(), now());
+values (12, 2, 0, 1, 4, 'CBox01', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (13, 2, 0, 2, 4, 'Box02', null, now(), now());
+values (13, 2, 0, 2, 4, 'CBox02', null, now(), now());
 INSERT INTO box (id, site_id, row_index, col_index, width, title, image_file_name, date_created, last_updated)
-values (14, 2, 1, 0, 12, 'Box10', null, now(), now());
+values (14, 2, 1, 0, 12, 'CBox10', null, now(), now());
 
 INSERT INTO rubric_box (box_id, rubric_id) values (1, 1);
 INSERT INTO rubric_box (box_id, rubric_id) values (2, 2);

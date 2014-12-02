@@ -7,6 +7,10 @@
 
 <table class="table">
     <tr>
+        <td>Site:</td>
+        <td>${box.site.name}</td>
+    </tr>
+    <tr>
         <td>Title:</td>
         <td>${box.title}</td>
     </tr>

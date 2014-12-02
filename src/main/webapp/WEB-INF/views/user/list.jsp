@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Users</h1>
-            <form:form method="post" action="add" commandName="user" class="form-horizontal">
+            <form:form method="post" action="save" commandName="user" class="form-horizontal">
             <div class="control-group">
                 <form:label cssClass="control-label" path="firstName">First Name:</form:label>
                 <div class="controls">

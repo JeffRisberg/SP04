@@ -84,17 +84,22 @@ public class BoxController extends AbstractAdminController {
     public ModelAndView create() {
 
         Box box = new Box();
+        List<Site> siteList = siteService.findEntityList();
 
         ModelAndView modelAndView = new ModelAndView("box/create");
+        modelAndView.addObject("siteList", siteList);
         modelAndView.addObject("command", box);
         return modelAndView;
     }
 
     @RequestMapping(value = "/box/edit/{id}", method = RequestMethod.GET)
     public ModelAndView edit(@PathVariable int id) {
+        
         Box box = boxService.findEntityById(id);
+        List<Site> siteList = siteService.findEntityList();
 
         ModelAndView modelAndView = new ModelAndView("box/edit");
+        modelAndView.addObject("siteList", siteList);
         modelAndView.addObject("command", box);
 
         return modelAndView;

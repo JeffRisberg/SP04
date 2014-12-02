@@ -54,8 +54,8 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user, BindingResult result) {
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String saveUser(@ModelAttribute("user") User user, BindingResult result) {
 
         userService.save(user);
 
