@@ -17,14 +17,6 @@
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
     </definition>
 
-    <definition name="modalLayout" template="/WEB-INF/layouts/modal.jsp">
-        <put-attribute name="body" value=""/>
-    </definition>
-
-    <definition name="emptyLayout" template="/WEB-INF/layouts/empty.jsp">
-        <put-attribute name="body" value=""/>
-    </definition>
-
     <definition name="uncaughtException" extends="standardLayout">
         <put-attribute name="body" value="/WEB-INF/views/errors/uncaughtException.jsp"/>
     </definition>
@@ -35,9 +27,6 @@
 
     <definition name="accessDeniedException" extends="standardLayout">
         <put-attribute name="body" value="/WEB-INF/views/errors/accessDeniedException.jsp"/>
-    </definition>
-
-    <definition name="home" template="/WEB-INF/views/home.jsp">
     </definition>
 
     <definition name="home/*" extends="standardLayout">
