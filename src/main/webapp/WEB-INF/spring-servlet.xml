@@ -11,22 +11,7 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/tx 
-        http://www.springframework.org/schema/tx/spring-tx.xsd
-        http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring 
-        http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
-
-    <ehcache:annotation-driven
-            create-missing-caches="true" cache-manager="cacheManager"/>
-
-    <ehcache:config cache-manager="cacheManager">
-        <ehcache:evict-expired-elements
-                interval="60"/>
-    </ehcache:config>
-
-    <bean id="cacheManager"
-          class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-        <property name="configLocation" value="classpath:ehcache.xml"/>
-    </bean>
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:property-placeholder location="classpath*:application.properties"/>
 
