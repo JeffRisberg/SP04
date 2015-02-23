@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="816068262">
+    <data-source source="LOCAL" name="dataSource" uuid="0b6cc1bb-4f5b-44c5-94b4-8476885b0356">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/sp04</jdbc-url>
+      <user-name>developer</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <libraries>
+        <library>
+          <url>file://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.17/mysql-connector-java-5.1.17.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
