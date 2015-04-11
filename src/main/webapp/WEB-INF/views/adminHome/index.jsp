@@ -13,7 +13,7 @@
 <div id="administration">
   <div class="list">  
     <c:forEach var="adminPanel" items="${adminPanelList}" varStatus="rowCounter">          
-      <div style="font-size: 16px; padding: 5px;">
+      <div style="font-size: 15px; padding: 5px;">
           <a href="<c:url value="${adminPanel.url}" />">
           ${adminPanel.name}
           </a>
