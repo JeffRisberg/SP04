@@ -3,11 +3,6 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="SP04-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="SP04:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>

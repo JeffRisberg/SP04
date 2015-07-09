@@ -27,8 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SP04" target="1.6" />
+      <module name="SP04" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
-
