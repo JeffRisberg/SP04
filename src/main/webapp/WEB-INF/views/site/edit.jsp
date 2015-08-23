@@ -8,13 +8,15 @@
     }
 </style>
 
+<script src="/resources/javascript/jquery.Jcrop.js"></script>
+
 <c:if test="${flashMessage != null}">
     <div class="message">${flashMessage}</div>
 </c:if>
 
 <c:url var="saveUrl" value="/site/save"/>
 <form:form method="post" action="${saveUrl}">
-    <form:hidden path="id"/>
+    <form:hidden path="id" enctype="multipart/form-data"/>
 
     <table>
         <tr>
@@ -27,6 +29,23 @@
             <td><form:input path="customCSS" size="40"/></td>
             <td><form:errors path="customCSS" cssClass="error"/></td>
         </tr>
+        <tr>
+            <td>File Upload:</td>
+            <td><input type="file" name="imageFile"></td>
+        </tr>
+        <tr>
+            <td>Image:</td>
+            <td>
+                <img id="jcrop_target" src="/resources/images/earth.jpg">
+                <br/>
+                <input type="hidden" size="4" id="x" name="x"/>
+                <input type="hidden" size="4" id="y" name="y"/>
+                <input type="hidden" size="4" id="x2" name="x2"/>
+                <input type="hidden" size="4" id="y2" name="y2"/>
+                <input type="hidden" size="4" id="w" name="w"/>
+                <input type="hidden" size="4" id="h" name="h"/>
+            </td>
+        </tr>
     </table>
 
     <div class="botButtons">
@@ -35,3 +54,20 @@
 
     <form:hidden path="dateCreated"/>
 </form:form>
+<script type="text/javascript">
+    $(function () {
+        $('#jcrop_target').Jcrop({
+            onChange: showCoords,
+            onSelect: showCoords
+        });
+    });
+
+    function showCoords(c) {
+        $('#x').val(c.x);
+        $('#y').val(c.y);
+        $('#x2').val(c.x2);
+        $('#y2').val(c.y2);
+        $('#w').val(c.w);
+        $('#h').val(c.h);
+    }
+</script>
