@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * Stores site info
+ * Stores site info, including the image for the site.
  */
 @Entity
 @Table(name = "site")
@@ -14,6 +14,10 @@ public class Site extends AbstractDatedDatabaseItem {
 
     @Basic
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name="image_id")
+    private Image image;
 
     @Column(name = "custom_css")
     private String customCSS;
@@ -27,6 +31,14 @@ public class Site extends AbstractDatedDatabaseItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public String getCustomCSS() {
