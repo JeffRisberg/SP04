@@ -15,8 +15,8 @@
 </c:if>
 
 <c:url var="saveUrl" value="/site/save"/>
-<form:form method="post" action="${saveUrl}">
-    <form:hidden path="id" enctype="multipart/form-data"/>
+<form:form method="post" action="${saveUrl}" enctype="multipart/form-data">
+    <form:hidden path="id"/>
 
     <table>
         <tr>

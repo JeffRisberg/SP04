@@ -66,6 +66,14 @@
           class="org.springframework.web.servlet.view.tiles2.TilesViewResolver">
     </bean>
 
+    <bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="1000000" />
+
+    </bean>
+
     <bean id="tilesConfigurer"
           class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
         <property name="definitions">
