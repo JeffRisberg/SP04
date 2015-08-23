@@ -8,7 +8,7 @@
     }
 </style>
 
-<script src="/resources/javascript/jquery.Jcrop.js"></script>
+<script src="<c:url value="/resources/javascript/jquery.Jcrop.js" />"></script>
 
 <c:if test="${flashMessage != null}">
     <div class="message">${flashMessage}</div>
@@ -36,7 +36,7 @@
         <tr>
             <td>Image:</td>
             <td>
-                <img id="jcrop_target" src="/resources/images/earth.jpg">
+                <img id="jcrop_target" src="<c:url value="/resources/images/earth.jpg" />">
                 <br/>
                 <input type="hidden" size="4" id="x" name="x"/>
                 <input type="hidden" size="4" id="y" name="y"/>
