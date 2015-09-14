@@ -3,10 +3,10 @@ package com.incra.services;
 import com.wepay.WePay;
 import com.wepay.model.Account;
 import com.wepay.model.Checkout;
-import com.wepay.model.OAuth2;
 import com.wepay.model.data.AccountFindData;
 import com.wepay.model.data.CheckoutData;
-import com.wepay.model.data.OAuth2Data;
+import com.wepay.model.data.PMCreditCardData;
+import com.wepay.model.data.PaymentMethodData;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 import java.math.BigDecimal;
 
 /**
- * The <i>DonationService</i> handles the JPA-based updating of Site entities.
+ * The <i>DonationService</i> handles the WePay integration
  *
  * @author Jeffrey Risberg
  * @since September 2015
@@ -35,14 +35,9 @@ public class DonationService {
         System.out.println("making a donation of " + amount + " on credit card " + creditCardId);
 
         try {
-            // initialize the connection
-
             // Get an instance of the API. It is threadsafe.
             WePay wepay = new WePay();
             wepay.initialize(87582L, "8f80d010ea", true);
-
-            // authorize us
-            //OAuth2.authorize()
 
             // get a token
             //OAuth2Data oData = new OAuth2Data();
@@ -55,7 +50,6 @@ public class DonationService {
             afData.name = "JustGive";
             Account[] foundList = Account.find(afData, userAccessToken);
 
-            System.out.println(foundList);
             for (Account account : foundList) {
                 System.out.println(account.getAccountId() + " " + account.getName());
             }
@@ -63,8 +57,7 @@ public class DonationService {
             Long accountId = 409908904L;
             Account foundAccount = Account.fetch(accountId, userAccessToken);
             System.out.println(foundAccount);
-            System.out.println(foundAccount.getName());
-
+            if (foundAccount != null) System.out.println(foundAccount.getAccountId() + " " + foundAccount.getName());
 
             AccountFindData afData2 = new AccountFindData();
             afData2.name = "Andrea Lloyd";
@@ -79,14 +72,22 @@ public class DonationService {
             cData.type = "donation";
             cData.amount = new BigDecimal(amount);
             cData.currency = "USD";
-            cData.fundingSources = "cc";
-            cData.paymentMethodType = "credit_card";
-            cData.paymentMethodId = creditCardId;
+            cData.autoCapture = Boolean.TRUE;
+            PaymentMethodData paymentMethodData = new PaymentMethodData();
+            paymentMethodData.type = "credit_card";
+            paymentMethodData.creditCard = new PMCreditCardData();
+            paymentMethodData.creditCard.id = creditCardId;
+            cData.paymentMethod = paymentMethodData;
             Checkout myCheckout = Checkout.create(cData, userAccessToken);
 
+            System.out.println("Got a checkout");
             System.out.println(myCheckout);
             System.out.println(myCheckout.getAmount());
             System.out.println(myCheckout.getPayerName());
+            System.out.println(myCheckout.getState());
+            System.out.println(myCheckout.getGross());
+            System.out.println(myCheckout.getProcessingFee());
+            System.out.println(myCheckout.isAutoCapture());
 
         } catch (Exception e) {
             e.printStackTrace();

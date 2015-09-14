@@ -14,8 +14,12 @@ Donation page here
 
 <table>
     <tr>
+        <td>Amount:</td>
+        <td><input id="amount" type="text"></td>
+    </tr>
+    <tr>
         <td>Name:</td>
-        <td><input id="name" type="text"></td>
+        <td><input id="name" type="text" value="Andrea Lloyd"></td>
     </tr>
     <tr>
         <td>Email:</td>
@@ -23,7 +27,7 @@ Donation page here
     </tr>
     <tr>
         <td>Credit Card Number:</td>
-        <td><input id="cc-number" type="text"></td>
+        <td><input id="cc-number" type="text" value="4003830171874018"></td>
     </tr>
     <tr>
         <td>Expiration Month:</td>
@@ -31,7 +35,7 @@ Donation page here
     </tr>
     <tr>
         <td>Expiration Year:</td>
-        <td><input id="cc-year" type="text"></td>
+        <td><input id="cc-year" type="text" value="2016"></td>
     </tr>
     <tr>
         <td>CVV:</td>
@@ -39,7 +43,7 @@ Donation page here
     </tr>
     <tr>
         <td>Zipcode:</td>
-        <td><input id="zip" type="text"></td>
+        <td><input id="zip" type="text" value="94303"></td>
     </tr>
     <tr>
         <td></td>
@@ -102,17 +106,17 @@ Donation page here
                     console.log(data);
                     // handle error response
                 } else {
-                    console.log(data);
                     // get the string from the input field for amount
                     // parse it a number
+
+                    // call your own app's API to save the token inside the data;
                     var url = "${donationUrl}";
                     var postData = {creditCardId: data.credit_card_id, amount: 525.0};
-                    console.log(postData);
+
                     $.postJSON(url, postData, function () {
                         console.log("got a result")
                     });
 
-                    // call your own app's API to save the token inside the data;
                     // show a success page
                 }
             });
@@ -120,14 +124,3 @@ Donation page here
 
     })();
 </script>
-
-
-<form:form method="post" action="${donationUrl}">
-    How much:?
-
-    <input name="amount">
-
-    <br/>
-    <br/>
-    <input type="submit">
-</form:form>

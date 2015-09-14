@@ -33,6 +33,8 @@
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-servlet:2.2.2" />
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-template:2.2.2" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:3.6.10.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:3.6.10.Final" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.6" />
@@ -57,6 +59,8 @@
           <element id="library" level="project" name="Maven: org.imgscalr:imgscalr-lib:4.2" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="module" name="Maven: org.gson:gson:0" module-name="SP04" />
+          <element id="library" level="module" name="Maven: org.java:json:0" module-name="SP04" />
         </element>
       </element>
       <element id="directory" name="META-INF">

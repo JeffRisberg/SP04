@@ -68,7 +68,7 @@ public class DonationController {
         Long creditCardId = donation.getCreditCardId();
         Float amount = donation.getAmount();
 
-        System.out.println(" about to process " + amount + " on " + creditCardId);
+        System.out.println("about to process " + amount + " on " + creditCardId);
 
         donationService.makeDonation(creditCardId, amount);
 
