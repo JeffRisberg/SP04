@@ -3,12 +3,6 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="SP04-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="SP04:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="library" level="module" name="Maven: org.gson:gson:0" module-name="SP04" />
-          <element id="library" level="module" name="Maven: org.java:json:0" module-name="SP04" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>

@@ -5,11 +5,6 @@
     <img border=0 src="<c:url value="/resources/images/sp04_logo.png" />"/>
 </a>
 
-
-<div >
-    <a href="<c:url value="/donation" />" class="btn btn-default">Donation</a>
-</div>
-
 <div class="pull-right">
     <a href="<c:url value="/adminHome" />" class="btn btn-default">Admin Home</a>
 </div>

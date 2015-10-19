@@ -59,8 +59,6 @@
           <element id="library" level="project" name="Maven: org.imgscalr:imgscalr-lib:4.2" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
-          <element id="library" level="module" name="Maven: org.gson:gson:0" module-name="SP04" />
-          <element id="library" level="module" name="Maven: org.java:json:0" module-name="SP04" />
         </element>
       </element>
       <element id="directory" name="META-INF">
