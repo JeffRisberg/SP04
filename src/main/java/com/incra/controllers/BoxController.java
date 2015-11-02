@@ -13,6 +13,7 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -110,6 +111,14 @@ public class BoxController extends AbstractAdminController {
                        BindingResult result, Model model, HttpSession session) {
 
         if (result.hasErrors()) {
+            for (ObjectError error: result.getAllErrors() ) {
+                System.out.println(error);
+            }
+
+            List<Site> siteList = siteService.findEntityList();
+            model.addAttribute("siteList", siteList);
+
+            if (box.getDateCreated() == null) box.setDateCreated(new Date());
             return "box/edit";
         }
 

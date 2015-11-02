@@ -10,6 +10,7 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -104,6 +105,11 @@ public class SiteController extends AbstractAdminController {
                        BindingResult result, Model model, HttpSession session) {
 
         if (result.hasErrors()) {
+            for (ObjectError error: result.getAllErrors() ) {
+                System.out.println(error);
+            }
+
+            if (site.getDateCreated() == null) site.setDateCreated(new Date());
             return "site/edit";
         }
 

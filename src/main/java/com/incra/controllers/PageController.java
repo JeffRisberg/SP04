@@ -23,10 +23,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The <i>PageController</i> controller
+ * The <i>PageController</i> controller handled rendering of a customized page made from boxes and rubrics.
  *
  * @author Jeffrey Risberg
- * @since February 214
+ * @since February 2014
  */
 @Controller
 public class PageController {
