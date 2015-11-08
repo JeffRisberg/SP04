@@ -1,7 +1,5 @@
 package com.incra.controllers;
 
-import com.incra.models.Box;
-import com.incra.models.Site;
 import com.incra.models.User;
 import com.incra.services.PageFrameworkService;
 import com.incra.services.UserService;
@@ -91,7 +89,7 @@ public class UserController {
         } catch (RuntimeException re) {
             pageFrameworkService.setFlashMessage(session, re.getMessage());
             pageFrameworkService.setIsRedirect(session, Boolean.TRUE);
-            return "redirect:/site/list";
+            return "redirect:/user/list";
         }
         return "redirect:/";
     }
