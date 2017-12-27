@@ -9,6 +9,8 @@
         Updated version of SP03, built in IntelliJ, to try out Spring 3.2 and related features,
         including serving of static content.
 
+        Uses JPA, with the implementation fro Hibernate 3.6.1-Final.
+
         Based on Maven, with Selenium testing.
     </description>
     <groupId>com.incra</groupId>
@@ -19,7 +21,7 @@
     <url>http://www.theRisbergFamily.com</url>
     <organization>
         <name>Jeffrey Risberg</name>
-        <url>mailto:jrisberg@aol.com</url>
+        <url>mailto:j.s.risberg@gmail.com</url>
     </organization>
 
     <properties>
